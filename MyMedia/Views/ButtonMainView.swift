@@ -16,7 +16,7 @@ struct ButtonMainView: View {
         case goToSpotify
         case goToWaze
         
-       
+        
     }
     var buttonColor: Color
     var textColor: Color
@@ -25,7 +25,8 @@ struct ButtonMainView: View {
     var action = ButtonAction.goToWaze
     var systemImage: Bool
     
-    
+    @State var isPresentingModal = false
+    @State var isPresentingModal2 = false
     
     
     var body: some View {
@@ -37,8 +38,10 @@ struct ButtonMainView: View {
             case .goToRadio:
                 break
             case .goToSpotify:
+                self.isPresentingModal.toggle()
                 break
             case .goToWaze:
+                self.isPresentingModal2.toggle()
                 break
             // Etc. Convertir este String en un enum y hacer el switch sobre el enum
             default:
@@ -68,9 +71,87 @@ struct ButtonMainView: View {
             .background(buttonColor)
             .cornerRadius(10)
         }
-        
+        .sheet(isPresented: $isPresentingModal, content: {
+            SpotifyModal(isPresented: self.$isPresentingModal)
+        })
+        .sheet(isPresented: $isPresentingModal2, content: {
+            WazeModal(isPresented: self.$isPresentingModal2)
+        })
     }
 }
+
+struct SpotifyModal: View{
+    
+    @Binding var isPresented: Bool
+    
+    var body:some View{
+        
+        VStack{
+            Text("Welcome to Spotify")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Button(action: {
+                self.isPresented = false
+                
+            }, label: {
+                Text("Aceptar")
+                    .foregroundColor(.white)
+                    .padding(.all,16)
+                    .background(Color.green)
+                    .cornerRadius(10)
+                    
+            })
+            Button(action: {
+                self.isPresented = false
+            }, label: {
+                Text("Cancelar")
+                    .foregroundColor(.white)
+                    .padding(.all,16)
+                    .background(Color.red)
+                    .cornerRadius(10)
+            })
+        }
+        .navigationTitle("Spotify")
+        
+    }
+    
+}
+
+struct WazeModal: View{
+    
+    @Binding var isPresented: Bool
+    
+    var body:some View{
+        
+        VStack{
+            Text("Welcome to Waze")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Button(action: {
+                self.isPresented = false
+                
+            }, label: {
+                Text("Aceptar")
+                    .foregroundColor(.white)
+                    .padding(.all,16)
+                    .background(Color.green)
+                    .cornerRadius(10)
+                    
+            })
+            Button(action: {
+                self.isPresented = false
+            }, label: {
+                Text("Cancelar")
+                    .foregroundColor(.white)
+                    .padding(.all,16)
+                    .background(Color.red)
+                    .cornerRadius(10)
+            })
+        }
+        .navigationTitle("Waze")
+        
+    }
+    
+}
+
 
 struct ButtonMainView_Previews: PreviewProvider {
     
