@@ -17,6 +17,7 @@
 		9A035C882726A280009C5020 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A035C872726A280009C5020 /* Preview Assets.xcassets */; };
 		9A035C932726A281009C5020 /* MyMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A035C922726A281009C5020 /* MyMediaTests.swift */; };
 		9A035C9E2726A281009C5020 /* MyMediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A035C9D2726A281009C5020 /* MyMediaUITests.swift */; };
+		9A4FFA30274657D100201581 /* PhoneScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4FFA2F274657D100201581 /* PhoneScreen.swift */; };
 		9AB190C72733D1EC0076C92F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AB190C92733D1EC0076C92F /* Localizable.strings */; };
 		9AB190D22733DAFB0076C92F /* AudioScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB190D12733DAFB0076C92F /* AudioScreen.swift */; };
 		9AB190D72733DB9A0076C92F /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB190D62733DB9A0076C92F /* SettingsScreen.swift */; };
@@ -57,6 +58,7 @@
 		9A035C9D2726A281009C5020 /* MyMediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMediaUITests.swift; sourceTree = "<group>"; };
 		9A035C9F2726A281009C5020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1DA06C27352454002816A3 /* hind-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "hind-light.otf"; path = "../../../Downloads/hind/hind-light.otf"; sourceTree = "<group>"; };
+		9A4FFA2F274657D100201581 /* PhoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneScreen.swift; sourceTree = "<group>"; };
 		9AB190C82733D1EC0076C92F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9AB190CD2733D1FA0076C92F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9AB190D12733DAFB0076C92F /* AudioScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioScreen.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				9A035C892726A280009C5020 /* Info.plist */,
 				9A035C862726A280009C5020 /* Preview Content */,
 				9AB190D12733DAFB0076C92F /* AudioScreen.swift */,
+				9A4FFA2F274657D100201581 /* PhoneScreen.swift */,
 			);
 			path = MyMedia;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4FFA30274657D100201581 /* PhoneScreen.swift in Sources */,
 				0F7F9E2E273BE28D007667AE /* ButtonsView.swift in Sources */,
 				0F7F9E30273BE462007667AE /* TimeView.swift in Sources */,
 				0FEA6736273BDB5C0059221E /* HeaderView.swift in Sources */,

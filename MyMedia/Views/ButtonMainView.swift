@@ -26,7 +26,7 @@ struct ButtonMainView: View {
     var systemImage: Bool
     
     @State var isPresentingModal = false
-    @State var isPresentingModal2 = false
+    @State var areYouGoingToSecondView: Bool = true
     
     
     var body: some View {
@@ -34,6 +34,7 @@ struct ButtonMainView: View {
         Button(action:{
             switch action {
             case .goToPhone:
+
                 break
             case .goToRadio:
                 break
@@ -41,7 +42,7 @@ struct ButtonMainView: View {
                 self.isPresentingModal.toggle()
                 break
             case .goToWaze:
-                self.isPresentingModal2.toggle()
+                self.isPresentingModal.toggle()
                 break
             // Etc. Convertir este String en un enum y hacer el switch sobre el enum
             default:
@@ -72,11 +73,16 @@ struct ButtonMainView: View {
             .cornerRadius(10)
         }
         .sheet(isPresented: $isPresentingModal, content: {
-            SpotifyModal(isPresented: self.$isPresentingModal)
+            if action == ButtonAction.goToWaze{
+                WazeModal(isPresented: self.$isPresentingModal)
+                
+            }else if action == ButtonAction.goToSpotify{
+                SpotifyModal(isPresented: self.$isPresentingModal)
+                
+            }
+            
         })
-        .sheet(isPresented: $isPresentingModal2, content: {
-            WazeModal(isPresented: self.$isPresentingModal2)
-        })
+        
     }
 }
 
